@@ -1,0 +1,979 @@
+{
+  "originalTriangles": 200526,
+  "distantTriangles": 124130,
+  "reductionPercent": 38.1,
+  "parts": [
+    {
+      "product": "penguin-01-11-red-and-white-folk",
+      "originalTriangles": 1414,
+      "distantTriangles": 555,
+      "relativeError": 0.01974
+    },
+    {
+      "product": "penguin-01-12-blue-floral",
+      "originalTriangles": 1404,
+      "distantTriangles": 567,
+      "relativeError": 0.01992
+    },
+    {
+      "product": "penguin-01-13-sunflower",
+      "originalTriangles": 1414,
+      "distantTriangles": 561,
+      "relativeError": 0.01998
+    },
+    {
+      "product": "penguin-01-14-green-leaf-pattern",
+      "originalTriangles": 1410,
+      "distantTriangles": 563,
+      "relativeError": 0.01975
+    },
+    {
+      "product": "penguin-01-21-heart-dot",
+      "originalTriangles": 1416,
+      "distantTriangles": 549,
+      "relativeError": 0.0199
+    },
+    {
+      "product": "penguin-01-22-starry-night",
+      "originalTriangles": 2804,
+      "distantTriangles": 2112,
+      "relativeError": 0.01988
+    },
+    {
+      "product": "penguin-01-23-candy-cane-stripe",
+      "originalTriangles": 1418,
+      "distantTriangles": 551,
+      "relativeError": 0.01989
+    },
+    {
+      "product": "penguin-01-24-mushroom-cap",
+      "originalTriangles": 1802,
+      "distantTriangles": 713,
+      "relativeError": 0.01984
+    },
+    {
+      "product": "penguin-01-31-alpine-hat",
+      "originalTriangles": 1844,
+      "distantTriangles": 740,
+      "relativeError": 0.01987
+    },
+    {
+      "product": "penguin-01-32-tulip-apron",
+      "originalTriangles": 1406,
+      "distantTriangles": 565,
+      "relativeError": 0.01985
+    },
+    {
+      "product": "penguin-01-33-moon-and-sun",
+      "originalTriangles": 1404,
+      "distantTriangles": 545,
+      "relativeError": 0.01986
+    },
+    {
+      "product": "penguin-01-34-checkerboard",
+      "originalTriangles": 1400,
+      "distantTriangles": 531,
+      "relativeError": 0.01955
+    },
+    {
+      "product": "penguin-01-41-bird-painted",
+      "originalTriangles": 1386,
+      "distantTriangles": 567,
+      "relativeError": 0.01994
+    },
+    {
+      "product": "penguin-01-42-fish-painted",
+      "originalTriangles": 1390,
+      "distantTriangles": 591,
+      "relativeError": 0.01984
+    },
+    {
+      "product": "penguin-01-43-snowflake",
+      "originalTriangles": 1388,
+      "distantTriangles": 545,
+      "relativeError": 0.01979
+    },
+    {
+      "product": "penguin-01-44-rainbow-ring",
+      "originalTriangles": 1392,
+      "distantTriangles": 576,
+      "relativeError": 0.01992
+    },
+    {
+      "product": "penguin-felt-01-11-red-scarf",
+      "originalTriangles": 386,
+      "distantTriangles": 376,
+      "relativeError": 0.01779
+    },
+    {
+      "product": "penguin-felt-01-12-blue-earmuff",
+      "originalTriangles": 476,
+      "distantTriangles": 388,
+      "relativeError": 0.01941
+    },
+    {
+      "product": "penguin-felt-01-13-yellow-raincoat",
+      "originalTriangles": 488,
+      "distantTriangles": 410,
+      "relativeError": 0.01944
+    },
+    {
+      "product": "penguin-felt-01-14-pink-bow",
+      "originalTriangles": 374,
+      "distantTriangles": 314,
+      "relativeError": 0.01993
+    },
+    {
+      "product": "penguin-felt-01-21-green-explorer-hat",
+      "originalTriangles": 344,
+      "distantTriangles": 322,
+      "relativeError": 0.01978
+    },
+    {
+      "product": "penguin-felt-01-22-orange-pom-pom-beanie",
+      "originalTriangles": 316,
+      "distantTriangles": 302,
+      "relativeError": 0.01713
+    },
+    {
+      "product": "penguin-felt-01-23-purple-vest",
+      "originalTriangles": 246,
+      "distantTriangles": 228,
+      "relativeError": 0.01814
+    },
+    {
+      "product": "penguin-felt-01-24-mint-backpack",
+      "originalTriangles": 318,
+      "distantTriangles": 282,
+      "relativeError": 0.01971
+    },
+    {
+      "product": "penguin-felt-01-31-candy-stripe-scarf",
+      "originalTriangles": 392,
+      "distantTriangles": 376,
+      "relativeError": 0.01806
+    },
+    {
+      "product": "penguin-felt-01-32-flower-crown",
+      "originalTriangles": 396,
+      "distantTriangles": 376,
+      "relativeError": 0.01957
+    },
+    {
+      "product": "penguin-felt-01-33-tiny-sailor",
+      "originalTriangles": 252,
+      "distantTriangles": 234,
+      "relativeError": 0.01951
+    },
+    {
+      "product": "penguin-felt-01-34-patchwork-tummy",
+      "originalTriangles": 250,
+      "distantTriangles": 236,
+      "relativeError": 0.01895
+    },
+    {
+      "product": "penguin-felt-01-41-sleepy-closed-eye",
+      "originalTriangles": 250,
+      "distantTriangles": 228,
+      "relativeError": 0.01995
+    },
+    {
+      "product": "penguin-felt-01-42-heart-chest",
+      "originalTriangles": 246,
+      "distantTriangles": 226,
+      "relativeError": 0.01939
+    },
+    {
+      "product": "penguin-felt-01-43-star-button",
+      "originalTriangles": 246,
+      "distantTriangles": 230,
+      "relativeError": 0.01962
+    },
+    {
+      "product": "penguin-felt-01-44-two-tone-grey",
+      "originalTriangles": 250,
+      "distantTriangles": 232,
+      "relativeError": 0.01948
+    },
+    {
+      "product": "penguin-porcelain-01-11-ivory-lace-gown",
+      "originalTriangles": 616,
+      "distantTriangles": 478,
+      "relativeError": 0.01985
+    },
+    {
+      "product": "penguin-porcelain-01-12-rose-silk-gown",
+      "originalTriangles": 1452,
+      "distantTriangles": 1285,
+      "relativeError": 0.01942
+    },
+    {
+      "product": "penguin-porcelain-01-13-powder-blue-bonnet",
+      "originalTriangles": 630,
+      "distantTriangles": 526,
+      "relativeError": 0.01933
+    },
+    {
+      "product": "penguin-porcelain-01-14-lilac-parasol",
+      "originalTriangles": 1480,
+      "distantTriangles": 1412,
+      "relativeError": 0.01944
+    },
+    {
+      "product": "penguin-porcelain-01-21-black-velvet-mourning-dress",
+      "originalTriangles": 694,
+      "distantTriangles": 646,
+      "relativeError": 0.0195
+    },
+    {
+      "product": "penguin-porcelain-01-22-gold-brocade",
+      "originalTriangles": 494,
+      "distantTriangles": 404,
+      "relativeError": 0.01905
+    },
+    {
+      "product": "penguin-porcelain-01-23-mint-pinafore",
+      "originalTriangles": 554,
+      "distantTriangles": 474,
+      "relativeError": 0.01998
+    },
+    {
+      "product": "penguin-porcelain-01-24-peach-tea-dress",
+      "originalTriangles": 552,
+      "distantTriangles": 455,
+      "relativeError": 0.01989
+    },
+    {
+      "product": "penguin-porcelain-01-31-sailor-collar",
+      "originalTriangles": 598,
+      "distantTriangles": 556,
+      "relativeError": 0.01848
+    },
+    {
+      "product": "penguin-porcelain-01-32-tartan-sash",
+      "originalTriangles": 1124,
+      "distantTriangles": 1076,
+      "relativeError": 0.01807
+    },
+    {
+      "product": "penguin-porcelain-01-33-pearl-necklace",
+      "originalTriangles": 984,
+      "distantTriangles": 932,
+      "relativeError": 0.018
+    },
+    {
+      "product": "penguin-porcelain-01-34-flower-hat",
+      "originalTriangles": 1284,
+      "distantTriangles": 1112,
+      "relativeError": 0.01972
+    },
+    {
+      "product": "penguin-porcelain-01-41-tiny-crown",
+      "originalTriangles": 1712,
+      "distantTriangles": 1595,
+      "relativeError": 0.01988
+    },
+    {
+      "product": "penguin-porcelain-01-42-cameo-brooch",
+      "originalTriangles": 1100,
+      "distantTriangles": 1017,
+      "relativeError": 0.01954
+    },
+    {
+      "product": "penguin-porcelain-01-43-ruffled-bloomers",
+      "originalTriangles": 626,
+      "distantTriangles": 529,
+      "relativeError": 0.01927
+    },
+    {
+      "product": "penguin-porcelain-01-44-moon-white-nightgown",
+      "originalTriangles": 578,
+      "distantTriangles": 469,
+      "relativeError": 0.0198
+    },
+    {
+      "product": "penguin-04-11-classic-black-white-crochet-penguin",
+      "originalTriangles": 1460,
+      "distantTriangles": 554,
+      "relativeError": 0.00976
+    },
+    {
+      "product": "penguin-04-12-pastel-pink-crochet-penguin",
+      "originalTriangles": 1446,
+      "distantTriangles": 549,
+      "relativeError": 0.00936
+    },
+    {
+      "product": "penguin-04-13-baby-blue-crochet-penguin",
+      "originalTriangles": 1464,
+      "distantTriangles": 556,
+      "relativeError": 0.00934
+    },
+    {
+      "product": "penguin-04-14-lemon-yellow-crochet-penguin",
+      "originalTriangles": 1464,
+      "distantTriangles": 556,
+      "relativeError": 0.00915
+    },
+    {
+      "product": "penguin-04-21-strawberry-hat-crochet-penguin",
+      "originalTriangles": 2538,
+      "distantTriangles": 1517,
+      "relativeError": 0.01986
+    },
+    {
+      "product": "penguin-04-22-frog-hat-crochet-penguin",
+      "originalTriangles": 2430,
+      "distantTriangles": 1486,
+      "relativeError": 0.01942
+    },
+    {
+      "product": "penguin-04-23-bee-stripes-crochet-penguin",
+      "originalTriangles": 580,
+      "distantTriangles": 318,
+      "relativeError": 0.01973
+    },
+    {
+      "product": "penguin-04-24-watermelon-crochet-penguin",
+      "originalTriangles": 1450,
+      "distantTriangles": 550,
+      "relativeError": 0.00974
+    },
+    {
+      "product": "penguin-04-31-sleepy-lidded-crochet-penguin",
+      "originalTriangles": 1460,
+      "distantTriangles": 554,
+      "relativeError": 0.00956
+    },
+    {
+      "product": "penguin-04-32-blush-cheek-crochet-penguin",
+      "originalTriangles": 426,
+      "distantTriangles": 260,
+      "relativeError": 0.01969
+    },
+    {
+      "product": "penguin-04-32-blush-cheek-crochet-penguin",
+      "originalTriangles": 336,
+      "distantTriangles": 200,
+      "relativeError": 0.00702
+    },
+    {
+      "product": "penguin-04-33-tiny-backpack-crochet-penguin",
+      "originalTriangles": 1652,
+      "distantTriangles": 626,
+      "relativeError": 0.01008
+    },
+    {
+      "product": "penguin-04-34-flower-bobble-crochet-penguin",
+      "originalTriangles": 1680,
+      "distantTriangles": 638,
+      "relativeError": 0.01007
+    },
+    {
+      "product": "penguin-04-41-chunky-yarn-jumbo-crochet-penguin",
+      "originalTriangles": 426,
+      "distantTriangles": 250,
+      "relativeError": 0.01994
+    },
+    {
+      "product": "penguin-04-41-chunky-yarn-jumbo-crochet-penguin",
+      "originalTriangles": 336,
+      "distantTriangles": 200,
+      "relativeError": 0.00765
+    },
+    {
+      "product": "penguin-04-42-mini-keychain-size-crochet-penguin",
+      "originalTriangles": 1838,
+      "distantTriangles": 698,
+      "relativeError": 0.01067
+    },
+    {
+      "product": "penguin-04-43-rainbow-scarf-crochet-penguin",
+      "originalTriangles": 1660,
+      "distantTriangles": 630,
+      "relativeError": 0.01096
+    },
+    {
+      "product": "penguin-04-44-cocoa-brown-crochet-penguin",
+      "originalTriangles": 1488,
+      "distantTriangles": 564,
+      "relativeError": 0.00986
+    },
+    {
+      "product": "penguin-05-11-classic-tuxedo-vinyl-penguin",
+      "originalTriangles": 968,
+      "distantTriangles": 544,
+      "relativeError": 0.01973
+    },
+    {
+      "product": "penguin-05-12-peach-blush-vinyl-penguin",
+      "originalTriangles": 972,
+      "distantTriangles": 559,
+      "relativeError": 0.01985
+    },
+    {
+      "product": "penguin-05-13-mint-vinyl-penguin",
+      "originalTriangles": 978,
+      "distantTriangles": 542,
+      "relativeError": 0.01966
+    },
+    {
+      "product": "penguin-05-14-lavender-vinyl-penguin",
+      "originalTriangles": 974,
+      "distantTriangles": 530,
+      "relativeError": 0.0199
+    },
+    {
+      "product": "penguin-05-21-heart-hands-vinyl-penguin",
+      "originalTriangles": 3236,
+      "distantTriangles": 1571,
+      "relativeError": 0.01983
+    },
+    {
+      "product": "penguin-05-22-angel-wings-vinyl-penguin",
+      "originalTriangles": 3612,
+      "distantTriangles": 2156,
+      "relativeError": 0.01991
+    },
+    {
+      "product": "penguin-05-23-devil-horn-vinyl-penguin",
+      "originalTriangles": 2644,
+      "distantTriangles": 1420,
+      "relativeError": 0.01971
+    },
+    {
+      "product": "penguin-05-24-flower-crown-vinyl-penguin",
+      "originalTriangles": 3920,
+      "distantTriangles": 2433,
+      "relativeError": 0.01995
+    },
+    {
+      "product": "penguin-05-31-soda-float-vinyl-penguin",
+      "originalTriangles": 2362,
+      "distantTriangles": 935,
+      "relativeError": 0.01986
+    },
+    {
+      "product": "penguin-05-32-ice-cream-scoop-vinyl-penguin",
+      "originalTriangles": 1720,
+      "distantTriangles": 770,
+      "relativeError": 0.01989
+    },
+    {
+      "product": "penguin-05-33-bubble-tea-vinyl-penguin",
+      "originalTriangles": 998,
+      "distantTriangles": 522,
+      "relativeError": 0.01999
+    },
+    {
+      "product": "penguin-05-34-candy-ring-vinyl-penguin",
+      "originalTriangles": 3128,
+      "distantTriangles": 1552,
+      "relativeError": 0.01989
+    },
+    {
+      "product": "penguin-05-41-sparkle-clear-vinyl-penguin",
+      "originalTriangles": 1992,
+      "distantTriangles": 1076,
+      "relativeError": 0.02
+    },
+    {
+      "product": "penguin-05-42-glitter-belly-vinyl-penguin",
+      "originalTriangles": 4024,
+      "distantTriangles": 3062,
+      "relativeError": 0.01987
+    },
+    {
+      "product": "penguin-05-43-two-tone-split-vinyl-penguin",
+      "originalTriangles": 4044,
+      "distantTriangles": 3051,
+      "relativeError": 0.01989
+    },
+    {
+      "product": "penguin-05-44-glow-orange-vinyl-penguin",
+      "originalTriangles": 4004,
+      "distantTriangles": 3076,
+      "relativeError": 0.01985
+    },
+    {
+      "product": "penguin-06-11-red-khokhloma-penguin-doll",
+      "originalTriangles": 574,
+      "distantTriangles": 239,
+      "relativeError": 0.01963
+    },
+    {
+      "product": "penguin-06-12-blue-gzhel-penguin-doll",
+      "originalTriangles": 630,
+      "distantTriangles": 244,
+      "relativeError": 0.01962
+    },
+    {
+      "product": "penguin-06-13-gold-firebird-penguin-doll",
+      "originalTriangles": 580,
+      "distantTriangles": 241,
+      "relativeError": 0.01978
+    },
+    {
+      "product": "penguin-06-14-green-leaf-penguin-doll",
+      "originalTriangles": 582,
+      "distantTriangles": 262,
+      "relativeError": 0.0199
+    },
+    {
+      "product": "penguin-06-21-rose-garden-penguin-doll",
+      "originalTriangles": 574,
+      "distantTriangles": 257,
+      "relativeError": 0.01986
+    },
+    {
+      "product": "penguin-06-22-sunflower-penguin-doll",
+      "originalTriangles": 632,
+      "distantTriangles": 239,
+      "relativeError": 0.01981
+    },
+    {
+      "product": "penguin-06-23-snow-maiden-penguin-doll",
+      "originalTriangles": 578,
+      "distantTriangles": 256,
+      "relativeError": 0.01982
+    },
+    {
+      "product": "penguin-06-24-berry-wreath-penguin-doll",
+      "originalTriangles": 578,
+      "distantTriangles": 247,
+      "relativeError": 0.01961
+    },
+    {
+      "product": "penguin-06-31-midnight-navy-penguin-doll",
+      "originalTriangles": 578,
+      "distantTriangles": 235,
+      "relativeError": 0.01996
+    },
+    {
+      "product": "penguin-06-32-coral-pink-penguin-doll",
+      "originalTriangles": 632,
+      "distantTriangles": 252,
+      "relativeError": 0.01996
+    },
+    {
+      "product": "penguin-06-33-amber-honey-penguin-doll",
+      "originalTriangles": 580,
+      "distantTriangles": 252,
+      "relativeError": 0.01987
+    },
+    {
+      "product": "penguin-06-34-ice-white-penguin-doll",
+      "originalTriangles": 584,
+      "distantTriangles": 242,
+      "relativeError": 0.01988
+    },
+    {
+      "product": "penguin-06-41-mushroom-folk-penguin-doll",
+      "originalTriangles": 580,
+      "distantTriangles": 251,
+      "relativeError": 0.01964
+    },
+    {
+      "product": "penguin-06-42-rooster-folk-penguin-doll",
+      "originalTriangles": 628,
+      "distantTriangles": 260,
+      "relativeError": 0.01988
+    },
+    {
+      "product": "penguin-06-43-tea-samovar-penguin-doll",
+      "originalTriangles": 580,
+      "distantTriangles": 247,
+      "relativeError": 0.0196
+    },
+    {
+      "product": "penguin-06-44-winter-fir-penguin-doll",
+      "originalTriangles": 580,
+      "distantTriangles": 256,
+      "relativeError": 0.01985
+    },
+    {
+      "product": "penguin-07-11-red-coat-nutcracker-penguin",
+      "originalTriangles": 1284,
+      "distantTriangles": 1176,
+      "relativeError": 0.01955
+    },
+    {
+      "product": "penguin-07-12-blue-hussar-nutcracker-penguin",
+      "originalTriangles": 1064,
+      "distantTriangles": 982,
+      "relativeError": 0.01962
+    },
+    {
+      "product": "penguin-07-13-green-jaeger-nutcracker-penguin",
+      "originalTriangles": 1604,
+      "distantTriangles": 1374,
+      "relativeError": 0.01844
+    },
+    {
+      "product": "penguin-07-14-gold-palace-nutcracker-penguin",
+      "originalTriangles": 1244,
+      "distantTriangles": 1158,
+      "relativeError": 0.01967
+    },
+    {
+      "product": "penguin-07-21-drummer-nutcracker-penguin",
+      "originalTriangles": 1008,
+      "distantTriangles": 920,
+      "relativeError": 0.01914
+    },
+    {
+      "product": "penguin-07-22-flag-bearer-nutcracker-penguin",
+      "originalTriangles": 1072,
+      "distantTriangles": 898,
+      "relativeError": 0.01993
+    },
+    {
+      "product": "penguin-07-23-tall-bearskin-nutcracker-penguin",
+      "originalTriangles": 1088,
+      "distantTriangles": 974,
+      "relativeError": 0.01994
+    },
+    {
+      "product": "penguin-07-24-candy-cane-nutcracker-penguin",
+      "originalTriangles": 856,
+      "distantTriangles": 802,
+      "relativeError": 0.01991
+    },
+    {
+      "product": "penguin-07-31-silver-guard-nutcracker-penguin",
+      "originalTriangles": 1204,
+      "distantTriangles": 1084,
+      "relativeError": 0.01862
+    },
+    {
+      "product": "penguin-07-32-pink-toy-soldier-nutcracker-penguin",
+      "originalTriangles": 1040,
+      "distantTriangles": 934,
+      "relativeError": 0.01883
+    },
+    {
+      "product": "penguin-07-33-black-and-gold-nutcracker-penguin",
+      "originalTriangles": 1360,
+      "distantTriangles": 1227,
+      "relativeError": 0.01897
+    },
+    {
+      "product": "penguin-07-34-white-winter-nutcracker-penguin",
+      "originalTriangles": 1364,
+      "distantTriangles": 1236,
+      "relativeError": 0.01948
+    },
+    {
+      "product": "penguin-07-41-mouse-king-hat-nutcracker-penguin",
+      "originalTriangles": 1384,
+      "distantTriangles": 1200,
+      "relativeError": 0.01938
+    },
+    {
+      "product": "penguin-07-42-ballet-prince-nutcracker-penguin",
+      "originalTriangles": 1344,
+      "distantTriangles": 1118,
+      "relativeError": 0.01976
+    },
+    {
+      "product": "penguin-07-43-toy-cannon-hat-nutcracker-penguin",
+      "originalTriangles": 1116,
+      "distantTriangles": 996,
+      "relativeError": 0.01773
+    },
+    {
+      "product": "penguin-07-44-parade-sash-nutcracker-penguin",
+      "originalTriangles": 932,
+      "distantTriangles": 884,
+      "relativeError": 0.01595
+    },
+    {
+      "product": "penguin-08-11-indigo-kimono-kokeshi-penguin",
+      "originalTriangles": 624,
+      "distantTriangles": 250,
+      "relativeError": 0.01982
+    },
+    {
+      "product": "penguin-08-12-sakura-pink-kokeshi-penguin",
+      "originalTriangles": 624,
+      "distantTriangles": 244,
+      "relativeError": 0.01991
+    },
+    {
+      "product": "penguin-08-13-matcha-green-kokeshi-penguin",
+      "originalTriangles": 624,
+      "distantTriangles": 240,
+      "relativeError": 0.01971
+    },
+    {
+      "product": "penguin-08-14-crimson-obi-kokeshi-penguin",
+      "originalTriangles": 624,
+      "distantTriangles": 242,
+      "relativeError": 0.01979
+    },
+    {
+      "product": "penguin-08-21-gold-chrysanthemum-kokeshi-penguin",
+      "originalTriangles": 624,
+      "distantTriangles": 252,
+      "relativeError": 0.01968
+    },
+    {
+      "product": "penguin-08-22-wave-pattern-kokeshi-penguin",
+      "originalTriangles": 624,
+      "distantTriangles": 244,
+      "relativeError": 0.01994
+    },
+    {
+      "product": "penguin-08-23-snow-dot-kokeshi-penguin",
+      "originalTriangles": 624,
+      "distantTriangles": 246,
+      "relativeError": 0.01967
+    },
+    {
+      "product": "penguin-08-24-maple-leaf-kokeshi-penguin",
+      "originalTriangles": 624,
+      "distantTriangles": 238,
+      "relativeError": 0.01958
+    },
+    {
+      "product": "penguin-08-31-black-and-white-zen-kokeshi-penguin",
+      "originalTriangles": 628,
+      "distantTriangles": 250,
+      "relativeError": 0.01971
+    },
+    {
+      "product": "penguin-08-32-pastel-stripe-kokeshi-penguin",
+      "originalTriangles": 624,
+      "distantTriangles": 240,
+      "relativeError": 0.0199
+    },
+    {
+      "product": "penguin-08-33-festival-fan-kokeshi-penguin",
+      "originalTriangles": 624,
+      "distantTriangles": 248,
+      "relativeError": 0.01988
+    },
+    {
+      "product": "penguin-08-34-tea-ceremony-kokeshi-penguin",
+      "originalTriangles": 624,
+      "distantTriangles": 240,
+      "relativeError": 0.01969
+    },
+    {
+      "product": "penguin-08-41-child-small-kokeshi-penguin",
+      "originalTriangles": 698,
+      "distantTriangles": 264,
+      "relativeError": 0.0188
+    },
+    {
+      "product": "penguin-08-42-tall-slim-kokeshi-penguin",
+      "originalTriangles": 586,
+      "distantTriangles": 222,
+      "relativeError": 0.01788
+    },
+    {
+      "product": "penguin-08-43-chubby-round-kokeshi-penguin",
+      "originalTriangles": 658,
+      "distantTriangles": 250,
+      "relativeError": 0.0185
+    },
+    {
+      "product": "penguin-08-44-two-tone-split-kokeshi-penguin",
+      "originalTriangles": 672,
+      "distantTriangles": 254,
+      "relativeError": 0.01995
+    },
+    {
+      "product": "penguin-09-11-red-tin-wind-up-penguin",
+      "originalTriangles": 2432,
+      "distantTriangles": 1261,
+      "relativeError": 0.01997
+    },
+    {
+      "product": "penguin-09-12-teal-tin-wind-up-penguin",
+      "originalTriangles": 1178,
+      "distantTriangles": 633,
+      "relativeError": 0.01953
+    },
+    {
+      "product": "penguin-09-13-sunshine-yellow-tin-penguin",
+      "originalTriangles": 2464,
+      "distantTriangles": 1338,
+      "relativeError": 0.01985
+    },
+    {
+      "product": "penguin-09-14-navy-tin-penguin",
+      "originalTriangles": 1206,
+      "distantTriangles": 656,
+      "relativeError": 0.01923
+    },
+    {
+      "product": "penguin-09-21-propeller-hat-tin-penguin",
+      "originalTriangles": 1326,
+      "distantTriangles": 640,
+      "relativeError": 0.01982
+    },
+    {
+      "product": "penguin-09-22-roller-skate-tin-penguin",
+      "originalTriangles": 4400,
+      "distantTriangles": 2202,
+      "relativeError": 0.01983
+    },
+    {
+      "product": "penguin-09-23-drum-tin-penguin",
+      "originalTriangles": 1590,
+      "distantTriangles": 865,
+      "relativeError": 0.01969
+    },
+    {
+      "product": "penguin-09-24-umbrella-tin-penguin",
+      "originalTriangles": 16146,
+      "distantTriangles": 16146,
+      "relativeError": 0
+    },
+    {
+      "product": "penguin-09-31-rocket-pack-tin-penguin",
+      "originalTriangles": 2000,
+      "distantTriangles": 1007,
+      "relativeError": 0.01986
+    },
+    {
+      "product": "penguin-09-32-bicycle-tin-penguin",
+      "originalTriangles": 2000,
+      "distantTriangles": 1344,
+      "relativeError": 0.01988
+    },
+    {
+      "product": "penguin-09-33-teapot-hat-tin-penguin",
+      "originalTriangles": 1774,
+      "distantTriangles": 921,
+      "relativeError": 0.01993
+    },
+    {
+      "product": "penguin-09-34-clock-belly-tin-penguin",
+      "originalTriangles": 2452,
+      "distantTriangles": 1214,
+      "relativeError": 0.01995
+    },
+    {
+      "product": "penguin-09-41-rust-patina-tin-penguin",
+      "originalTriangles": 1184,
+      "distantTriangles": 652,
+      "relativeError": 0.01969
+    },
+    {
+      "product": "penguin-09-42-chrome-tin-penguin",
+      "originalTriangles": 1178,
+      "distantTriangles": 654,
+      "relativeError": 0.01975
+    },
+    {
+      "product": "penguin-09-43-circus-stripe-tin-penguin",
+      "originalTriangles": 2444,
+      "distantTriangles": 1298,
+      "relativeError": 0.0198
+    },
+    {
+      "product": "penguin-09-44-star-spangled-tin-penguin",
+      "originalTriangles": 1182,
+      "distantTriangles": 637,
+      "relativeError": 0.01996
+    },
+    {
+      "product": "penguin-10-11-chocolate-clay-penguin",
+      "originalTriangles": 438,
+      "distantTriangles": 266,
+      "relativeError": 0.01989
+    },
+    {
+      "product": "penguin-10-12-strawberry-cream-clay-penguin",
+      "originalTriangles": 534,
+      "distantTriangles": 282,
+      "relativeError": 0.0199
+    },
+    {
+      "product": "penguin-10-13-mint-chip-clay-penguin",
+      "originalTriangles": 492,
+      "distantTriangles": 264,
+      "relativeError": 0.0198
+    },
+    {
+      "product": "penguin-10-14-lemon-drop-clay-penguin",
+      "originalTriangles": 500,
+      "distantTriangles": 266,
+      "relativeError": 0.01979
+    },
+    {
+      "product": "penguin-10-21-macaron-hat-clay-penguin",
+      "originalTriangles": 636,
+      "distantTriangles": 318,
+      "relativeError": 0.01988
+    },
+    {
+      "product": "penguin-10-22-cupcake-liner-clay-penguin",
+      "originalTriangles": 918,
+      "distantTriangles": 397,
+      "relativeError": 0.01979
+    },
+    {
+      "product": "penguin-10-23-donut-ring-clay-penguin",
+      "originalTriangles": 498,
+      "distantTriangles": 308,
+      "relativeError": 0.01989
+    },
+    {
+      "product": "penguin-10-24-lollipop-clay-penguin",
+      "originalTriangles": 602,
+      "distantTriangles": 324,
+      "relativeError": 0.01989
+    },
+    {
+      "product": "penguin-10-31-marshmallow-clay-penguin",
+      "originalTriangles": 556,
+      "distantTriangles": 280,
+      "relativeError": 0.01953
+    },
+    {
+      "product": "penguin-10-32-caramel-drizzle-clay-penguin",
+      "originalTriangles": 436,
+      "distantTriangles": 270,
+      "relativeError": 0.01975
+    },
+    {
+      "product": "penguin-10-33-blueberry-clay-penguin",
+      "originalTriangles": 708,
+      "distantTriangles": 348,
+      "relativeError": 0.01994
+    },
+    {
+      "product": "penguin-10-34-matcha-clay-penguin",
+      "originalTriangles": 560,
+      "distantTriangles": 302,
+      "relativeError": 0.01974
+    },
+    {
+      "product": "penguin-10-41-cookie-crumb-clay-penguin",
+      "originalTriangles": 436,
+      "distantTriangles": 280,
+      "relativeError": 0.01989
+    },
+    {
+      "product": "penguin-10-42-cotton-candy-clay-penguin",
+      "originalTriangles": 578,
+      "distantTriangles": 288,
+      "relativeError": 0.01973
+    },
+    {
+      "product": "penguin-10-43-pudding-cup-clay-penguin",
+      "originalTriangles": 532,
+      "distantTriangles": 256,
+      "relativeError": 0.01996
+    },
+    {
+      "product": "penguin-10-44-candy-cane-clay-penguin",
+      "originalTriangles": 496,
+      "distantTriangles": 284,
+      "relativeError": 0.01992
+    }
+  ]
+}

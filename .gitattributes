@@ -1,0 +1,7 @@
+* text=auto
+*.png binary
+*.jpg binary
+*.webp binary
+*.glb binary
+*.bin binary
+tools/reference/* -text
