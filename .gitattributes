@@ -5,3 +5,4 @@
 *.glb binary
 *.bin binary
 tools/reference/* -text
+tools/reference/shelf-source/* -text

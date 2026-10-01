@@ -18,7 +18,7 @@ export function makeLayout(catalog) {
     const id = (bank * 10 + bay) * 2 + side;
     const yaw = side === 0 ? -Math.PI / 2 : Math.PI / 2;
     const x = (bank - 2) * 5.5 + (side === 0 ? -1 : 1) * (depth * .5 + .01);
-    const z = -15.3 + bay * 3.0;
+    const z = -15 + bay * 2.7 + (bay >= 5 ? 2.4 : 0);
     const sheet = catalog.sheets[Math.floor(id * catalog.sheets.length / 100)];
     const products = catalog.products.filter(p => p.sheet === sheet.id);
     shelves.push({ id, x, z, yaw, width: 2.6, depth, height, sheet: sheet.id });
@@ -26,7 +26,8 @@ export function makeLayout(catalog) {
       const product = products[((id % 10) * 4 + row) % products.length];
       const y = .1 + row * (clear + .04);
       const rowId = id * 4 + row;
-      rows.push({ id: rowId, shelf: id, y, clear, product: product.id, center: [x + Math.sin(yaw) * (depth * .5 + .025), y + clear / 2, z], yaw });
+      const cardZ = -depth * .5 + .05;
+      rows.push({ id: rowId, shelf: id, y, clear, product: product.id, center: [x + Math.sin(yaw) * (depth * .5 + .025), y + clear / 2, z], card: [x + Math.sin(yaw) * cardZ, y + clear - .2, z + Math.cos(yaw) * cardZ], yaw });
       for (let col = 0; col < 10; col++) {
         const lx = -1.24 + .496 * ((col % 5) + .5);
         const lz = -depth * .5 + .04 + (depth - .04) * (col < 5 ? .25 : .75);
@@ -36,6 +37,14 @@ export function makeLayout(catalog) {
     }
   }
   return { slots, rows, shelves, expected, size, depth, height, clear };
+}
+
+export function shelfParts(shelf, layout) {
+  const parts = [{ size: [2.6, .1, shelf.depth], position: [0, .05, 0] }];
+  for (let row = 1; row < 4; row++) parts.push({ size: [2.48, .04, shelf.depth], position: [0, .1 + row * (layout.clear + .04) - .02, 0] });
+  parts.push({ size: [2.6, .04, shelf.depth], position: [0, shelf.height - .02, 0] }, { size: [2.6, shelf.height, .04], position: [0, shelf.height / 2, -shelf.depth / 2 + .02] });
+  for (const side of [-1, 1]) parts.push({ size: [.06, shelf.height, shelf.depth], position: [side * 1.27, shelf.height / 2, 0] });
+  return parts;
 }
 
 export class GameState {
@@ -182,7 +191,21 @@ export function validateSave(d, state) {
 
 export function floorClear(x, z, layout, margin = .3) {
   if (Math.abs(x) > 14.6 - margin || Math.abs(z) > 19.5 - margin) return false;
-  for (let bank = 0; bank < 5; bank++) if (Math.abs(x - (bank - 2) * 5.5) < layout.depth + .01 + margin && z > -16.9 - margin && z < 13.1 + margin) return false;
+  for (let bank = 0; bank < 5; bank++) if (Math.abs(x - (bank - 2) * 5.5) < layout.depth + .01 + margin) {
+    for (let bay = 0; bay < 10; bay++) {
+      const bayZ = layout.shelves[(bank * 10 + bay) * 2].z;
+      if (Math.abs(z - bayZ) < 1.3 + margin) return false;
+    }
+  }
   for (const cx of [-9, -3, 3, 9]) if (Math.abs(x - cx) < 1.95 + margin && Math.abs(z - 17.2) < .9 + margin) return false;
+  return true;
+}
+
+export function walkClear(x, z, layout) {
+  if (Math.abs(x) > 14.5 || Math.abs(z) > 19.4) return false;
+  for (let bank = 0; bank < 5; bank++) if (Math.abs(x - (bank - 2) * 5.5) < layout.depth + .01 + .26) {
+    for (let bay = 0; bay < 10; bay++) if (Math.abs(z - layout.shelves[(bank * 10 + bay) * 2].z) < 1.5) return false;
+  }
+  for (const cx of [-9, -3, 3, 9]) if (Math.abs(x - cx) < 1.95 && Math.abs(z - 17.2) < .9) return false;
   return true;
 }

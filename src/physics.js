@@ -20,10 +20,10 @@ export class PenguinPhysics {
     // These guards affect physics only; shelf targeting still reaches the rows.
     for (const shelf of view.layout?.shelves ?? []) {
       const q = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), shelf.yaw);
-      const center = new THREE.Vector3(0, shelf.height/2, shelf.depth/2+.025).applyQuaternion(q).add(new THREE.Vector3(shelf.x,0,shelf.z));
-      const half = new THREE.Vector3(.04,shelf.height/2,shelf.width/2);
+      const center = new THREE.Vector3(0, shelf.height/2, shelf.depth/2+.02).applyQuaternion(q).add(new THREE.Vector3(shelf.x,0,shelf.z));
+      const half = new THREE.Vector3(.02,shelf.height/2,shelf.width/2);
       const box = new THREE.Box3(center.clone().sub(half),center.clone().add(half));
-      const desc = RAPIER.ColliderDesc.cuboid(shelf.width/2,shelf.height/2,.04).setTranslation(center.x,center.y,center.z).setRotation(q).setFriction(.65);
+      const desc = RAPIER.ColliderDesc.cuboid(shelf.width/2,shelf.height/2,.02).setTranslation(center.x,center.y,center.z).setRotation(q).setFriction(.65);
       this.world.createCollider(desc); this.staticShapes.push({box,center,shape:desc.shape,q});
     }
     this.rebuild();

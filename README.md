@@ -39,6 +39,9 @@ independent assets, reference hashes, floor layouts and physics checks still run
 ## Implemented game
 
 - All 160 penguin designs, 10 collections, 100 shelf faces, 400 rows, and 4,000 items.
+- Original shelf transforms and dimensions: 2.7 m bay pitch, 5.5 m bank pitch,
+  central 2.4 m cross-aisle gap, two lines of five slots per row, and framed
+  32 cm row pictures high on each back panel. Walking collision follows each bay.
 - Choose-your-rows and assigned-row sorting, ten matching penguins per row.
 - Carrying, bag selection/cycling, picking stocked penguins back up, rotating
   the carried model, dropping, and a complete-store win screen.
@@ -67,7 +70,8 @@ only the chosen layout is fetched for a new game. The opening pour animates draw
 transforms while keeping the saved destination poses intact. Moving penguins use
 Rapier. The marketing shot editor and offline mesh-authoring tools are not part
 of this player-facing rewrite. The renderer recreates the shop rather than copying
-Godot scenes or shaders, so lighting, camera, and pile arrangements differ.
+Godot shaders, so lighting and decorative props can still differ. Shelf transforms,
+slot positions and row cards are checked against copies of the original layout rules.
 
 ## Rendering and physics
 

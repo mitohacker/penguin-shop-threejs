@@ -285,7 +285,7 @@ async function boot() {
     platform.loaded(); ui.show('title', data());
     if (saved?.backup) ui.toast('Recovered your store from its backup save.');
     // Read-only diagnostics for the browser verifier and player performance checks.
-    window.penguinGame = { get state() { return state; }, get view() { return view; }, get physics() { return physics; }, get ui() { return ui; }, get active() { return active; }, version: '1.1.0' };
+    window.penguinGame = { get state() { return state; }, get view() { return view; }, get physics() { return physics; }, get ui() { return ui; }, get active() { return active; }, version: '1.1.1' };
   } catch (error) { console.error(error); ui.show('error', { message: error.message }); }
 }
 boot();

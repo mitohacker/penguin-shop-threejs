@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { floorClear } from './core.js';
+import { walkClear, shelfParts } from './core.js';
 import { DropIntro } from './drop-intro.js';
 
 const V = () => new THREE.Vector3();
@@ -74,11 +74,7 @@ export class ShopWorld {
     };
     const signGeometries = [];
     for (const shelf of this.layout.shelves) {
-      addShelfPart(shelf, [2.6, .1, shelf.depth], [0, .05, 0]);
-      for (let r = 1; r < 4; r++) addShelfPart(shelf, [2.48, .04, shelf.depth], [0, .1 + r * (this.layout.clear + .04) - .02, 0]);
-      addShelfPart(shelf, [2.6, .04, shelf.depth], [0, shelf.height - .02, 0]);
-      addShelfPart(shelf, [2.6, shelf.height, .04], [0, shelf.height / 2, -shelf.depth / 2 + .02]);
-      for (const sign of [-1, 1]) addShelfPart(shelf, [.06, shelf.height, shelf.depth], [sign * 1.27, shelf.height / 2, 0]);
+      for (const part of shelfParts(shelf, this.layout)) addShelfPart(shelf, part.size, part.position);
     }
     const merged = mergeGeometries(geometries); geometries.forEach(g => g.dispose());
     this.scene.add(new THREE.Mesh(merged, wood));
@@ -95,10 +91,11 @@ export class ShopWorld {
     const atlas = new THREE.CanvasTexture(signCanvas); atlas.colorSpace = THREE.SRGBColorSpace;
     for (const shelf of this.layout.shelves) {
       const i = this.catalog.sheets.findIndex(s => s.id === shelf.sheet);
-      const g = new THREE.PlaneGeometry(2.45, .25);
+      const g = new THREE.PlaneGeometry(2.45, .23);
       const uv = g.attributes.uv;
       for (let n = 0; n < uv.count; n++) uv.setY(n, 1 - ((i * 96 + (1 - uv.getY(n)) * 96) / 1024));
-      g.applyMatrix4(new THREE.Matrix4().compose(new THREE.Vector3(shelf.x + Math.sin(shelf.yaw) * (shelf.depth * .5 + .015), shelf.height + .17, shelf.z), new THREE.Quaternion().setFromAxisAngle(UP, shelf.yaw), new THREE.Vector3(1, 1, 1))); signGeometries.push(g);
+      const signZ = shelf.depth * .5 - .04;
+      g.applyMatrix4(new THREE.Matrix4().compose(new THREE.Vector3(shelf.x + Math.sin(shelf.yaw) * signZ, shelf.height + .2, shelf.z + Math.cos(shelf.yaw) * signZ), new THREE.Quaternion().setFromAxisAngle(UP, shelf.yaw), new THREE.Vector3(1, 1, 1))); signGeometries.push(g);
     }
     this.scene.add(new THREE.Mesh(mergeGeometries(signGeometries), new THREE.MeshBasicMaterial({ map: atlas }))); signGeometries.forEach(g => g.dispose());
     const textCanvas = document.createElement('canvas'); textCanvas.width = 1024; textCanvas.height = 180;
@@ -241,7 +238,7 @@ export class ShopWorld {
       ctx.drawImage(img, index % 16 * 128 + 4, Math.floor(index / 16) * 128 + 4, 120, 120);
     }));
     const texture = new THREE.CanvasTexture(atlas); texture.colorSpace = THREE.SRGBColorSpace;
-    const geo = new THREE.PlaneGeometry(.22, .22);
+    const geo = new THREE.PlaneGeometry(.32, .32);
     this.cardOffsets = new THREE.InstancedBufferAttribute(new Float32Array(400 * 2), 2); geo.setAttribute('cardOffset', this.cardOffsets);
     const material = new THREE.MeshBasicMaterial({ map: texture });
     material.onBeforeCompile = shader => {
@@ -250,16 +247,30 @@ export class ShopWorld {
     };
     material.customProgramCacheKey = () => 'penguin-row-atlas-v1';
     this.rowCardMesh = new THREE.InstancedMesh(geo, material, 400); this.rowCardMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage); this.scene.add(this.rowCardMesh);
+    // Same four-ring bevel as the original thumbnail_frame_mesh(), shared by all rows.
+    const positions = [], colors = [], sizes = [.181, .177, .163, .158], depths = [.001, .007, .007, .002];
+    const shades = ['#251b16', '#765036', '#533723', '#211915'].map(c => new THREE.Color(c));
+    const corners = [[-1,-1],[1,-1],[1,1],[-1,1]];
+    for (let ring = 0; ring < 3; ring++) for (let side = 0; side < 4; side++) {
+      const next = (side + 1) % 4;
+      for (const [r,c] of [[ring,side],[ring,next],[ring+1,next],[ring,side],[ring+1,next],[ring+1,side]]) {
+        positions.push(corners[c][0]*sizes[r], corners[c][1]*sizes[r], depths[r]); colors.push(...shades[r].toArray());
+      }
+    }
+    const frame = new THREE.BufferGeometry(); frame.setAttribute('position',new THREE.Float32BufferAttribute(positions,3)); frame.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));
+    this.cardFrameMesh = new THREE.InstancedMesh(frame,new THREE.MeshBasicMaterial({vertexColors:true,side:THREE.DoubleSide}),400);
+    this.cardFrameMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage); this.scene.add(this.cardFrameMesh);
   }
   updateRowCards() {
     for (const row of this.layout.rows) {
       const product = this.state.rowProduct(row.id);
-      const shelf = this.layout.shelves[row.shelf];
-      const pose = new THREE.Matrix4().compose(new THREE.Vector3(shelf.x + Math.sin(row.yaw) * (shelf.depth * .5 + .032), row.y + .13, shelf.z + Math.cos(row.yaw) * 1.08), new THREE.Quaternion().setFromAxisAngle(UP, row.yaw), new THREE.Vector3(1, 1, 1));
+      const pose = new THREE.Matrix4().compose(new THREE.Vector3(...row.card), new THREE.Quaternion().setFromAxisAngle(UP, row.yaw), new THREE.Vector3(1, 1, 1));
       this.rowCardMesh.setMatrixAt(row.id, product ? pose : hiddenMatrix);
+      this.cardFrameMesh.setMatrixAt(row.id, product ? pose : hiddenMatrix);
       if (product) { const index = this.catalog.products.findIndex(p => p.id === product); this.cardOffsets.setXY(row.id, (index % 16 * 128 + 4) / 2048, 1 - (Math.floor(index / 16) * 128 + 124) / 1280); }
     }
     this.rowCardMesh.instanceMatrix.needsUpdate = true; this.cardOffsets.needsUpdate = true; this.rowCardMesh.computeBoundingSphere();
+    this.cardFrameMesh.instanceMatrix.needsUpdate = true; this.cardFrameMesh.computeBoundingSphere();
   }
   pickRay(ndc, reach = 100) {
     this.camera.updateMatrixWorld();
@@ -359,8 +370,8 @@ export class ShopWorld {
     const forward = +(keys.has('KeyW') || keys.has('ArrowUp')) - +(keys.has('KeyS') || keys.has('ArrowDown')) - touch.y;
     const strafe = +(keys.has('KeyD') || keys.has('ArrowRight')) - +(keys.has('KeyA') || keys.has('ArrowLeft')) + touch.x;
     const vector = new THREE.Vector3(strafe, 0, -forward); if (vector.lengthSq() > 1) vector.normalize();
-    vector.applyAxisAngle(UP, this.yaw).multiplyScalar(dt * 3 * sprint);
-    const canMove = (x, z) => floorClear(x, z, this.layout, .22);
+    vector.applyAxisAngle(UP, this.yaw).multiplyScalar(dt * 4 * sprint);
+    const canMove = (x, z) => walkClear(x, z, this.layout);
     if (canMove(this.player.x + vector.x, this.player.z)) this.player.x += vector.x;
     if (canMove(this.player.x, this.player.z + vector.z)) this.player.z += vector.z;
     const eyeHeight = Math.min(4.25, 1.75 + (this.floorHeight?.(this.player) ?? 0));
@@ -379,5 +390,5 @@ export class ShopWorld {
   render() { this.flush(); this.renderer.render(this.scene, this.camera); }
   capturePoses() { return this.poses.map(v => [...v.p.toArray(), ...v.q.toArray()].map(n => +n.toFixed(5))); }
   captureCamera() { return { mode: this.mode, position: this.player.toArray(), yaw: this.yaw, pitch: this.pitch, zoom: this.zoom }; }
-  restoreCamera(v) { this.player.set(...v.position); if (!floorClear(this.player.x, this.player.z, this.layout, .22)) this.player.set(2.75, 1.75, 14.7); this.yaw = v.yaw; this.pitch = Math.max(-1.45, Math.min(1.45, v.pitch)); this.zoom = v.zoom; this.setMode(v.mode); }
+  restoreCamera(v) { this.player.set(...v.position); if (!walkClear(this.player.x, this.player.z, this.layout)) this.player.set(2.75, 1.75, 14.5); this.yaw = v.yaw; this.pitch = Math.max(-1.45, Math.min(1.45, v.pitch)); this.zoom = v.zoom; this.setMode(v.mode); }
 }
